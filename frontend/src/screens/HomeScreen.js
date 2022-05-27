@@ -3,7 +3,7 @@ import React, { useEffect, useReducer } from "react";
 import { Col, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
 import logger from "use-reducer-logger";
-import { Product } from "../components";
+import { LoadingBox, MessageBox, Product } from "../components";
 // import data from "../data";
 const reducer = (state, action) => {
   switch (action.type) {
@@ -47,9 +47,9 @@ const HomeScreen = () => {
       <h1>Featured Product</h1>
       <div className="products">
         {loading ? (
-          <div>Loading...</div>
+          <LoadingBox />
         ) : error ? (
-          <div>{error}</div>
+          <MessageBox variant="danger">{error}</MessageBox>
         ) : (
           <Row>
             {products.map((product) => (
