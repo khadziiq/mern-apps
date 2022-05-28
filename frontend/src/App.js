@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import {
   CartScreen,
   HomeScreen,
+  PaymentScreen,
   ProductScreen,
   ShippingScreen,
   SignInScreen,
@@ -24,6 +25,7 @@ function App() {
     ctxDispatch({ type: "USER_SIGNOUT" });
     localStorage.removeItem("userInfo");
     localStorage.removeItem("shippingAddress");
+    localStorage.removeItem("paymentMethod");
   };
   return (
     <BrowserRouter>
@@ -76,6 +78,7 @@ function App() {
               <Route path="/signin" element={<SignInScreen />} />
               <Route path="/signup" element={<SignUpScreen />} />
               <Route path="/shipping" element={<ShippingScreen />} />
+              <Route path="/payment" element={<PaymentScreen />} />
               <Route path="/" element={<HomeScreen />} />
             </Routes>
           </Container>
