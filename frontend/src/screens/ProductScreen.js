@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useContext, useEffect, useReducer } from "react";
 import { Badge, Button, Card, Col, ListGroup, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { LoadingBox, MessageBox, Rating } from "../components";
 import { Store } from "../Store";
 import { getError } from "../utils";
@@ -45,7 +45,7 @@ const ProductScreen = () => {
     fetchData();
   }, [slug]);
 
-  const { state, dispatch: cxtDispatch } = useContext(Store);
+  const { state, dispatch: ctxDispatch } = useContext(Store);
   const { cart } = state;
   const addToCartHandler = async () => {
     const existItem = cart.cartItems.find((x) => x._id === product._id);
@@ -55,7 +55,7 @@ const ProductScreen = () => {
       window.alert("Sorry, product is out of stock");
       return;
     }
-    cxtDispatch({
+    ctxDispatch({
       type: "CART_ADD_ITEM",
       payload: { ...product, quantity },
     });
