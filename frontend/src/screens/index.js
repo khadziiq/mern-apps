@@ -5,7 +5,7 @@ import SignInScreen from "./SignInScreen";
 import SignUpScreen from "./SignUpScreen";
 import ShippingScreen from "./ShippingScreen";
 import PaymentScreen from "./PaymentScreen";
-
+import PlaceOrderScreen from "./PlaceOrderScreen";
 export {
   HomeScreen,
   ProductScreen,
@@ -14,4 +14,5 @@ export {
   ShippingScreen,
   SignUpScreen,
   PaymentScreen,
+  PlaceOrderScreen,
 };
