@@ -12,6 +12,7 @@ import {
   ShippingScreen,
   SignInScreen,
   SignUpScreen,
+  UserProfileScreen,
 } from "./screens";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
@@ -29,6 +30,7 @@ function App() {
     localStorage.removeItem("userInfo");
     localStorage.removeItem("shippingAddress");
     localStorage.removeItem("paymentMethod");
+    window.location.href = "/signin";
   };
   return (
     <BrowserRouter>
@@ -83,6 +85,7 @@ function App() {
               <Route path="/cart" element={<CartScreen />} />
               <Route path="/signin" element={<SignInScreen />} />
               <Route path="/signup" element={<SignUpScreen />} />
+              <Route path="/profile" element={<UserProfileScreen />} />
               <Route path="/placeorder" element={<PlaceOrderScreen />} />
               <Route path="/order/:id" element={<OrderScreen />} />
               <Route path="/orderhistory" element={<OrderHistoryScreen />} />
